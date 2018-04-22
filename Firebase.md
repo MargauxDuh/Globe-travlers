@@ -1,7 +1,7 @@
 ## Documentation Firebase
 (First the tuto bellow was often the source of this documentation :https://www.tutorialspoint.com/firebase/firebase_read_data.htm)
 
-### READING/LISTENING de la base:
+### READING/LISTENING:
 The function `on` on the cursor given by `.ref()` let you read/listen the database.
 
 !! Be careful of the argument that you give to `ref`. This argument is like the path to the part of the data you need.
