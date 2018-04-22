@@ -1,15 +1,26 @@
 ## Documentation Firebase
+(First the tuto bellow was often the source of this documentation :https://www.tutorialspoint.com/firebase/firebase_read_data.htm)
 
-### LECTURE/ECOUTE de la base:
-La fonction `on` sur le curseur référence permet cela ([..]ref.on(MODE, function)).
+### READING/LISTENING de la base:
+The function `on` on the cursor given by `.ref()` let you read/listen the database.
 
-On distingue plusieurs mode (MODE) d'écoute / lecture de base. C'est à dire que l'on peut écouter les changements qui 
-s'opèrent sur la base selon le type d'évennement.
+!! Be careful of the argument that you give to `ref`. This argument is like the path to the part of the data you need.
+Exemple: If you have a database `MyDataBase` with a collection `A` in it, and you want to have a direct acces to `A`, then
+your path should be `/MyDataBase/A` which gives you :
 
-Les MODE les plus courants : 
-* « value »
-* « child_added »
-* « child_changed »
-* « child_removed »
+`
+var ref = firebase.database('/A')
+ref.on(MODE, aFunction{})
+`
 
-ATTENTION : ces fonctions permettent de lire / écouter la base selon le type de modification, mais PAS la modifier !
+We can mention some of the must current `MODE` / ways of how to listen the database.
+They are:
+
+* `value`
+* `child_added`
+* `child_changed`
+* `child_removed`
+
+For more explanaition : https://www.tutorialspoint.com/firebase/firebase_read_data.htm
+
+Warning : Those function DO NOT operate changement on your database, only observe event on it.
