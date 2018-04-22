@@ -9,7 +9,7 @@ Exemple: If you have a database `MyDataBase` with a collection `A` in it, and yo
 your path should be `/MyDataBase/A` which gives you :
 
 `
-var ref = firebase.database('/A')
+var ref = firebase.database('/A') -> 
 ref.on(MODE, aFunction{})
 `
 
